@@ -1,12 +1,15 @@
 /* Estilos Gerais */
 body {
-    font-family: Montserrat, sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     margin: 0;
     padding: 0;
 }
 
 .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     width: 80%;
     margin: auto;
     background-color: #fff;
@@ -37,7 +40,7 @@ h1, h2 {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 15px;
+    gap: 15px; /* Pode considerar substituir por margin-right se precisar de suporte mais amplo */
 }
 
 .header-container nav ul li {
@@ -68,7 +71,7 @@ h1, h2 {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 15px; /* Pode considerar substituir por margin-right se precisar de suporte mais amplo */
 }
 
 .footer-container nav ul li {
@@ -87,28 +90,37 @@ h1, h2 {
 
 /* Informações de Contato */
 .contact-info {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Adicionado para dividir em duas colunas */
+    gap: 20px;
 }
 
-.email-box, .address-box {
-    width: 45%;
+.email-box {
+    background-color: #f9f9f9;
+    padding: 10px;
+}
+
+.address-box {
+    background-color: #f9f9f9;
+    padding: 10px;
+}
+
+.map-and-form {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 20px;
 }
 
 .map-container {
-    width: 50%;
-    float: left;
-    margin-right: 20px;
+    background-color: #f9f9f9;
+    padding: 10px;
 }
 
 .contact-form {
-    width: 45%;
-    float: right;
-}
-
-.contact-form form {
-    width: 100%;
+    background-color: #f9f9f9;
+    padding: 20px;
 }
 
 .contact-form label {
@@ -121,106 +133,28 @@ h1, h2 {
 .contact-form input[type="tel"],
 .contact-form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.contact-form textarea {
+    resize: vertical;
 }
 
 .contact-form button {
-    padding: 10px 20px;
     background-color: #C80102;
     color: white;
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 .contact-form button:hover {
-    background-color: #960019;
-}
-
-/* Barra de Busca */
-.search-bar {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
-}
-
-.search-bar input[type="text"] {
-    width: 200px; /* Ajuste o tamanho conforme necessário */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
-    box-sizing: border-box;
-}
-
-.search-bar button {
-    padding: 10px 20px;
-    background-color: #C80102;
-    color: white;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-}
-
-/* Banner Principal */
-.banner img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 20px;
-}
-
-/* Notícias em Destaque */
-.news-highlight {
-    margin-bottom: 20px;
-}
-
-.news-highlight img {
-    width: 100%;
-    height: auto;
-}
-
-.news-highlight p {
-    margin: 10px 0;
-}
-
-/* Lista de Notícias */
-.news-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Ajuste conforme necessário */
-    gap: 20px;
-}
-
-.news-list article {
-    background-color: #fff;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.news-list article img {
-    width: 100%;
-    height: auto;
-}
-
-.news-list article h3 {
-    margin: 10px 0;
-}
-
-.news-list article p {
-    margin: 10px 0;
-}
-
-.news-list article a {
-    color: #C80102;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.news-list article a:hover {
-    text-decoration: underline;
+    background-color: #960106;
 }
